@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box,useMediaQuery, useTheme } from '@mui/material';
 import Navbar from 'scenes/navbar';
 import FriendListWidget from "scenes/widgets/FriendListWidget";
 
