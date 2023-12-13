@@ -47,3 +47,53 @@ const FriendListPage = ({ userId }) => {
 };
 
 export default FriendListPage;
+// import React, { useEffect, useState, useCallback } from 'react';
+// import { useSelector } from 'react-redux';
+// import { Box, useMediaQuery } from '@mui/material';
+// import Navbar from 'scenes/navbar';
+// import FriendListWidget from "scenes/widgets/FriendListWidget";
+
+// const FriendListPage = ({ userId }) => {
+//   const user = useSelector((state) => state.user);
+//   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
+//   const [friends, setFriends] = useState([]);
+
+//   const token = useSelector((state) => state.token);
+
+//   // Using useCallback to memoize the function
+//   const getFriends = useCallback(async () => {
+//     const response = await fetch(
+//       `http://localhost:3001/users/${user._id}/allusers`,
+//       {
+//         method: "GET",
+//         headers: { Authorization: `Bearer ${token}` },
+//       }
+//     );
+//     const data = await response.json();
+//     console.log('all ' ,data);
+//     setFriends(data); // Update state correctly
+//   }, [token, user._id]); // Added dependencies
+
+//   useEffect(() => {
+//     getFriends();
+//   }, [getFriends]);
+
+//   return (
+//     <Box>
+//       <Navbar />
+//       <Box
+//         width="100%"
+//         padding="2rem 6%"
+//         display={isNonMobileScreens ? 'flex' : 'block'}
+//         gap="2rem"
+//         justifyContent="center"
+//       >
+//         <div>
+//           <FriendListWidget userId={user._id} />
+//         </div>
+//       </Box>
+//     </Box>
+//   );
+// };
+
+// export default FriendListPage;
