@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Box,useMediaQuery, useTheme } from '@mui/material';
 import Navbar from 'scenes/navbar';
 import FriendListWidget from "scenes/widgets/FriendListWidget";
+const backendUrl = "https://sociasynccap.onrender.com"
 
 const FriendListPage = ({ userId }) => {
   const user = useSelector((state) => state.user);
@@ -14,7 +15,7 @@ const FriendListPage = ({ userId }) => {
   
   const getFriends = async () => {
     const response = await fetch(
-      `http://localhost:3001/users/${user._id}/allusers`,
+      `${backendUrl}/users/${user._id}/allusers`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
