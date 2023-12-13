@@ -29,7 +29,7 @@ const app = express();
 const server = http.createServer(app); // Create http server
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://comforting-bunny-f594d1.netlify.app/",
     methods: ["GET", "POST"],
   },
 }); 
@@ -40,7 +40,7 @@ app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "https://comforting-bunny-f594d1.netlify.app/",
 }));
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 app.set("io", io);
